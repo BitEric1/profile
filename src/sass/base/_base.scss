@@ -1,5 +1,5 @@
 @use "../abstracts" as *; //  @include screen(sm)
-@use "../abstracts"; // @include abstracts.screen(sm)
+// @use "../abstracts"; // @include abstracts.screen(sm)
 
 *,
 ::before,
@@ -16,12 +16,23 @@ html {
 }
 
 body {
+    font-family: $font-base;
+    color: #fff;
     font-size: 1.6rem;
-    font-family: "Roboto", serif;
-    color: var(--text-color);
-    background: var(--body-bg);
-    padding-top: 80px;
+    background-color: $body-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
+
+// h1,
+// h2,
+// h3,
+// .heading {
+//     font-family: $font-heading;
+//     font-weight: 600;
+
+// }
 
 a {
     color: inherit;
@@ -59,13 +70,9 @@ textarea {
 :is(input, textarea):-webkit-autofill:focus,
 :is(input, textarea):-webkit-autofill:hover,
 :is(input, textarea):-webkit-autofill:active {
-    caret-color: var(--text-color);
-    -webkit-text-fill-color: var(--text-color);
+    caret-color: $text-color;
+    -webkit-text-fill-color: $text-color;
     transition: background-color 1s 9999s;
-}
-
-.icon {
-    filter: var(--icon-color);
 }
 
 .container {
@@ -87,81 +94,4 @@ em {
 b,
 strong {
     font-weight: 600;
-}
-
-.order-1 {
-    order: 1;
-}
-
-.order-2 {
-    order: 2;
-}
-
-.heading {
-    color: #fff;
-    font-size: 8.4rem;
-    font-weight: 600;
-    line-height: 116.667%;
-}
-
-.heading-2 {
-    color: #fff;
-    font-size: 7.2rem;
-    font-weight: 600;
-    line-height: 119.444%;
-}
-
-.color-1 {
-    background: linear-gradient(
-        106deg,
-        #0095ff 49.58%,
-        #0058ff 70.92%
-    ) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.color-2 {
-    background: linear-gradient(
-        95deg,
-        #ffcb01 0.44%,
-        #ff5993 60.94%
-    ) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.color-3 {
-    background: linear-gradient(
-        99deg,
-        #ff5993 7.23%,
-        #b12eff 64.49%
-    ) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.color-4 {
-    background: linear-gradient(
-        113deg,
-        #722fff 40.29%,
-        #b12eff 89.4%
-    ) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.color-5 {
-    background: linear-gradient(
-        92deg,
-        #ac2ef8 48.36%,
-        #ff5993 91.36%
-    ) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
 }

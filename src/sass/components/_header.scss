@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as *; //  @include screen(sm)
+@use "../abstracts" as *;
+
+.header {
+    // background-color: rgb(254, 254, 254);
+    // background-color: $item-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $body-color;
+
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1);
+
+    &__inner {
+        padding: 20px 0;
+
+        @include screen(md) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include screen(md) {
+            display: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-left: -16px;
+
+        @include screen(md) {
+            margin-top: 30px;
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        padding: 8px 16px;
+
+        @include screen(md) {
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 16px;
+            background-color: $body-color;
+            border-radius: 8px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease-in;
+        font-size: 18px;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            content: "";
+            width: 0;
+            height: 3px;
+            border-radius: 20px;
+            background-color: $main-color;
+            transition: all 0.3s ease-in-out;
+
+            @include screen(md) {
+                bottom: -15px;
+            }
+        }
+
+        &:hover {
+            color: $main-color;
+            text-shadow: 0 5px 5px $main-color;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    &__mobile {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $main-color;
+    }
+}
+
+.cta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    @include screen(md) {
+        width: 100%;
+        margin-top: auto;
+        justify-content: space-between;
+    }
+}
+
+.btn {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background-color: #646cff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn--login {
+    background-color: initial;
+}
+
+.btn--login:hover {
+    color: $main-color;
+}
+
+.btn--signup:hover {
+    background-color: $main-color;
+}

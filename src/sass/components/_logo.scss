@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *; //  @include screen(sm)
+@use "../abstracts" as *;
+
+.logo {
+    @include screen(md) {
+    }
+
+    &__link {
+        display: flex;
+        gap: 10px;
+        align-items: center;    
+    }
+
+    &__img {
+        width: 48px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $main-color;
+        display: none;
+
+        @include screen(md) {
+            display: block;
+        }
+    }
+}
